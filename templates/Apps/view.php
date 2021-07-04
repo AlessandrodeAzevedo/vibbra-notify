@@ -12,6 +12,10 @@
             <?= $this->Form->postLink(__('Delete App'), ['action' => 'delete', $app->id], ['confirm' => __('Are you sure you want to delete # {0}?', $app->id), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Apps'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New App'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            
+            <?= $this->Html->link(__('Config Web Push'), ['action' => 'add', 'controller' => 'WebPushes', $app->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Config Email'), ['action' => 'add', 'controller' => 'Emails', $app->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Config Sms'), ['action' => 'add', 'controller' => 'Smss', $app->id], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">

@@ -36,7 +36,11 @@ class AppsController extends AppController
     public function view($id = null)
     {
         $app = $this->Apps->get($id, [
-            'contain' => [],
+            'contain' => [
+                'WebPushes',
+                'Emails',
+                'Smss'
+            ],
         ]);
 
         $this->set(compact('app'));
