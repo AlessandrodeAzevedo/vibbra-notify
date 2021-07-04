@@ -28,6 +28,7 @@ use Cake\Controller\Controller;
  */
 class AppController extends Controller
 {
+    public $auth_user;
     /**
      * Initialization hook method.
      *
@@ -43,11 +44,21 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-
+        $this->loadComponent('Authentication.Authentication');
+        if($this->Authentication->getResult()->isValid()){
+            $this->auth_user = $this->Authentication->getResult()->getData();
+        }
         /*
          * Enable the following component for recommended CakePHP form protection settings.
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+    }
+
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        
+        $this->Authentication->addUnauthenticatedActions(['login']);
     }
 }
