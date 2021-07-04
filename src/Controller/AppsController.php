@@ -60,7 +60,7 @@ class AppsController extends AppController
             if ($this->Apps->save($app)) {
                 $this->Flash->success(__('The app has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect('/');
             }
             $this->Flash->error(__('The app could not be saved. Please, try again.'));
         }
@@ -77,7 +77,11 @@ class AppsController extends AppController
     public function edit($id = null)
     {
         $app = $this->Apps->get($id, [
-            'contain' => [],
+            'contain' => [
+                'WebPushes',
+                'Emails',
+                'Smss'
+            ],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $app = $this->Apps->patchEntity($app, $this->request->getData());

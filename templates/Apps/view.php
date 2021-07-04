@@ -4,6 +4,13 @@
  * @var \App\Model\Entity\App $app
  */
 ?>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3><?= h($app->name) ?></h3>
+    </div>
+</div>
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -13,9 +20,9 @@
             <?= $this->Html->link(__('List Apps'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New App'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
             
-            <?= $this->Html->link(__('Config Web Push'), ['action' => 'add', 'controller' => 'WebPushes', $app->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('Config Email'), ['action' => 'add', 'controller' => 'Emails', $app->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('Config Sms'), ['action' => 'add', 'controller' => 'Smss', $app->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Config Web Push'), ['action' => 'add', 'controller' => 'WebPushesController', $app->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Config Email'), ['action' => 'add', 'controller' => 'EmailsController', $app->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Config Sms'), ['action' => 'add', 'controller' => 'SmssController', $app->id], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">

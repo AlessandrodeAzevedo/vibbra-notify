@@ -17,9 +17,9 @@ class CreateApps extends AbstractMigration
         $table = $this->table('apps')
         ->addColumn('name', 'string', ['limit' => 50])
         ->addColumn('user_id', 'integer', ['limit' => 50])
-        ->addColumn('enable_webpush', 'boolean', ['limit' => 50])
-        ->addColumn('enable_email', 'boolean', ['limit' => 50])
-        ->addColumn('enable_sms', 'boolean', ['limit' => 50])
+        ->addColumn('enable_webpush', 'boolean', ['null' => true, 'limit' => 50])
+        ->addColumn('enable_email', 'boolean', ['null' => true, 'limit' => 50])
+        ->addColumn('enable_sms', 'boolean', ['null' => true, 'limit' => 50])
         ->addColumn('created', 'datetime',['default'=>'CURRENT_TIMESTAMP'])
         ->addColumn('modified', 'datetime', ['null' => true])
         ->addColumn('status', 'boolean', [

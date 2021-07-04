@@ -84,21 +84,6 @@ class AppsTable extends Table
             ->notEmptyString('name');
 
         $validator
-            ->boolean('enable_webpush')
-            ->requirePresence('enable_webpush', 'create')
-            ->notEmptyString('enable_webpush');
-
-        $validator
-            ->boolean('enable_email')
-            ->requirePresence('enable_email', 'create')
-            ->notEmptyString('enable_email');
-
-        $validator
-            ->boolean('enable_sms')
-            ->requirePresence('enable_sms', 'create')
-            ->notEmptyString('enable_sms');
-
-        $validator
             ->boolean('status')
             ->notEmptyString('status');
 

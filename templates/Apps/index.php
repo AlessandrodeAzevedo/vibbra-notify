@@ -1,46 +1,24 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\App[]|\Cake\Collection\CollectionInterface $apps
  */
 ?>
-<div class="apps index content">
-    <?= $this->Html->link(__('New App'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Apps') ?></h3>
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('name') ?></th>
-                    <th><?= $this->Paginator->sort('status') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($apps as $app): ?>
-                <tr>
-                    <td><?= $this->Number->format($app->id) ?></td>
-                    <td><?= h($app->name) ?></td>
-                    <td><?= $app->status ? __("Actived") : __("Disabled") ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $app->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $app->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $app->id], ['confirm' => __('Are you sure you want to delete # {0}?', $app->id)]) ?>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+<div class="apps">
+    <?= $this->Html->link(__('New App'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+    <div class="row my-3">
+        <?php foreach($apps as $app): ?>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= h($app->name) ?></h5>
+                        <p class="card-text"></p>
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $app->id], ['class' => 'btn btn-sm btn-primary']) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $app->id], ['class' => 'btn btn-sm btn-warning']) ?>
+                        <!-- <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $app->id], ['confirm' => __('Are you sure you want to delete # {0}?', $app->id), 'class' => 'btn btn-sm btn-danger']) ?> -->
+                    </div>
+                    <div class="card-footer text-muted"><?= __("Last Notify: {0} days ago", 2); ?></div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>

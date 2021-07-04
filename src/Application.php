@@ -50,6 +50,8 @@ class Application extends BaseApplication
      */
     public function bootstrap(): void
     {
+        $this->addPlugin('MdBootstrap');
+
         // Call parent to load bootstrap from files.
         parent::bootstrap();
 
