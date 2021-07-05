@@ -56,7 +56,7 @@
                 </div>
             <?php endif; ?>
             <?php if($app->enable_email): ?> 
-                <div class="tab-pane fade show" id="email-content" role="tabpanel" aria-labelledby="email-tab">
+                <div class="tab-pane fade" id="email-content" role="tabpanel" aria-labelledby="email-tab">
                     <?php
                         echo $this->Form->control('emails.0.server_name');
                         echo $this->Form->control('emails.0.port');
@@ -69,8 +69,8 @@
                         ?>
                 </div>
             <?php endif; ?>
-            <?php if($app->enable_smss): ?> 
-                <div class="tab-pane fade show" id="sms-content" role="tabpanel" aria-labelledby="sms-tab">
+            <?php if($app->enable_sms): ?> 
+                <div class="tab-pane fade" id="sms-content" role="tabpanel" aria-labelledby="sms-tab">
                     <?php
                         echo $this->Form->control('smss.0.provider');
                         echo $this->Form->control('smss.0.login');

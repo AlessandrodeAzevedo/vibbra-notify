@@ -69,7 +69,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <a class="nav-link" href="/"><?= __('Home') ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><?= __('Notifications') ?></a>
+                    <a class="nav-link" href="/notifications"><?= __('Notifications') ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?= __('Admin') ?></a>

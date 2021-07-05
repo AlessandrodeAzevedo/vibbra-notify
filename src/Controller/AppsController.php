@@ -59,8 +59,8 @@ class AppsController extends AppController
             $app->user_id = $this->auth_user->id;
             if ($this->Apps->save($app)) {
                 $this->Flash->success(__('The app has been saved.'));
-
-                return $this->redirect('/');
+                
+                return $this->redirect(['action' => 'edit', $app->id]);
             }
             $this->Flash->error(__('The app could not be saved. Please, try again.'));
         }
@@ -87,8 +87,6 @@ class AppsController extends AppController
             $app = $this->Apps->patchEntity($app, $this->request->getData());
             if ($this->Apps->save($app)) {
                 $this->Flash->success(__('The app has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The app could not be saved. Please, try again.'));
         }
