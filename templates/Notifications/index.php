@@ -38,13 +38,13 @@
             ]); ?>
         </div>
         <div class="col-auto">
-            <?= $this->Form->submit('Filter',[
+            <?= $this->Form->submit(__('Filter'),[
                 "class" => "btn btn-primary"
             ]); ?>
         </div>
         <div class="col-auto">
             <?= $this->Html->link(
-                'Export to PDF', 
+                __('Export to PDF'), 
                 !empty(http_build_query($this->request->getQueryParams())) ? 
                 "/notifications.pdf?".http_build_query($this->request->getQueryParams()) : 
                 '/notifications.pdf',
@@ -55,8 +55,10 @@
             ); ?>
         </div>
         <div class="col-auto">
-            <?= $this->Html->link('Export to Excel', '#', [
-                "class" => "btn btn-outline-primary"
+            <?= $this->Html->link(__('Export to Excel') . '<br><small class="text-danger">Not working yet</small>', '#', [
+                "class" => "btn btn-outline-primary disabled",
+                "disabled" => "disabled",
+                "escape" => false
             ]); ?>
         </div>
     <?= $this->Form->end(); ?>
