@@ -53,7 +53,9 @@ class WebPushesController extends AppController
         $webPush = $this->WebPushes->newEmptyEntity();
         if ($this->request->is('post')) {
             $webPush = $this->WebPushes->patchEntity($webPush, $this->request->getData());
-            $webPush->app_id = $app_id;
+            if ($app_id) {
+                $webPush->app_id = $app_id;
+            }
             if ($this->WebPushes->save($webPush)) {
                 $this->Flash->success(__('The web push has been saved.'));
 

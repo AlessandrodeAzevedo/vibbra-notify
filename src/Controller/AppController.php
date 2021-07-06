@@ -28,6 +28,11 @@ use Cake\Controller\Controller;
  */
 class AppController extends Controller
 {
+    /**
+     * All data of auth user
+     *
+     * @var array
+     */
     public $auth_user;
 
     /**

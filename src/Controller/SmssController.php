@@ -53,7 +53,9 @@ class SmssController extends AppController
         $sms = $this->Smss->newEmptyEntity();
         if ($this->request->is('post')) {
             $sms = $this->Smss->patchEntity($sms, $this->request->getData());
-            $sms->app_id = $app_id;
+            if ($app_id) {
+                $sms->app_id = $app_id;
+            }
             if ($this->Smss->save($sms)) {
                 $this->Flash->success(__('The sms has been saved.'));
 

@@ -153,7 +153,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
      * Authencication Service
      *
      * @param \Psr\Http\Message\ServerRequestInterface $request Request
-     * @return \Psr\Http\Message\ServerRequestInterface
+     * @return \Authentication\AuthenticationService
      */
     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {

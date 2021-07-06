@@ -7,3 +7,16 @@ parameters:
 		- tests/bootstrap.php
 	paths:
 		- src/
+	ignoreErrors:
+		-
+			message: "#Access to an undefined property App\\\\Controller\\\\UsersController\\:\\:\\$Authentication.#"
+			path: src/Controller/UsersController.php
+		-
+			message: "#Access to an undefined property App\\\\Controller\\\\AppsController\\:\\:\\$Apps.#"
+			path: src/Controller/AppsController.php
+		-
+			message: "#Access to an undefined property App\\\\Controller\\\\Admin\\\\AppsController\\:\\:\\$Apps.#"
+			path: src/Controller/Admin/AppsController.php
+		-
+			message: "#Access to an undefined property App\\\\Controller\\\\AppController\\:\\:\\$Authentication.#"
+			path: src/Controller/AppController.php
