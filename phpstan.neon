@@ -1,8 +1,9 @@
 parameters:
-    level: 7
-    checkMissingIterableValueType: false
-    treatPhpDocTypesAsCertain: false
-    paths:
-        - src
-    excludes_analyse:
-        - src/Console/Installer.php
+	level: 6
+	checkMissingIterableValueType: false
+	checkGenericClassInNonGenericObjectType: false
+	treatPhpDocTypesAsCertain: false
+	bootstrapFiles:
+		- tests/bootstrap.php
+	paths:
+		- src/
