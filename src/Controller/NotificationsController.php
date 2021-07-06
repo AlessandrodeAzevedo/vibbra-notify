@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Core\Configure;
+
 /**
  * Notifications Controller
  *
@@ -32,6 +34,17 @@ class NotificationsController extends AppController
         ];
 
         $this->set(compact('notifications', 'origins'));
+        if ($this->request->getParam('_ext')) {
+            Configure::write('CakePdf', [
+                'engine' => 'CakePdf.WkHtmlToPdf',
+                'margin' => [
+                    'bottom' => 5,
+                    'left' => 5,
+                    'right' => 3,
+                    'top' => 5,
+                ],
+            ]);
+        }
     }
 
     /**

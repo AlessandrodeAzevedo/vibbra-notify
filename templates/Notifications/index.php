@@ -43,9 +43,15 @@
             ]); ?>
         </div>
         <div class="col-auto">
-            <?= $this->Html->link('Export to PDF', '#', [
-                "class" => "btn btn-outline-primary"
-            ]); ?>
+            <?= $this->Html->link(
+                'Export to PDF', 
+                !empty(http_build_query($this->request->getQueryParams())) ? 
+                "/notifications.pdf?".http_build_query($this->request->getQueryParams()) : 
+                '.pdf', 
+                [
+                    "class" => "btn btn-outline-primary",
+                ]
+            ); ?>
         </div>
         <div class="col-auto">
             <?= $this->Html->link('Export to Excel', '#', [

@@ -1,5 +1,10 @@
+table {
+    border: none;
+}
+
 .styled-table th a{
     color: white !important;
+    text-decoration: none;
 }
 .styled-table {
     border-collapse: collapse;
@@ -10,7 +15,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
-    background-color: var(--mdb-primary);
+    background-color: #1266f1;
     color: #ffffff;
     text-align: left;
 }
@@ -27,16 +32,16 @@
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid var(--mdb-primary);
+    border-bottom: 2px solid #1266f1;
 }
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: var(--mdb-primary);
+    color: #1266f1;
 }
 .form-select:focus{
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-color: var(--mdb-primary);
-    -webkit-box-shadow: inset 0 0 0 1px var(--mdb-primary);
-    box-shadow: inset 0 0 0 1px var(--mdb-primary);
+    border-color: #1266f1;
+    -webkit-box-shadow: inset 0 0 0 1px #1266f1;
+    box-shadow: inset 0 0 0 1px #1266f1;
 }
