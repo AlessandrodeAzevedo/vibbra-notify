@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
-use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -15,7 +14,6 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\EmailsTable&\Cake\ORM\Association\HasMany $Emails
  * @property \App\Model\Table\SmssTable&\Cake\ORM\Association\HasMany $Smss
  * @property \App\Model\Table\WebPushesTable&\Cake\ORM\Association\HasMany $WebPushes
- *
  * @method \App\Model\Entity\App newEmptyEntity()
  * @method \App\Model\Entity\App newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\App[] newEntities(array $data, array $options = [])
@@ -29,7 +27,6 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\App[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
  * @method \App\Model\Entity\App[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
  * @method \App\Model\Entity\App[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
- *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class AppsTable extends Table

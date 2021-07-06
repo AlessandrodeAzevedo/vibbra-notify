@@ -45,6 +45,7 @@ class SmssController extends AppController
     /**
      * Add method
      *
+     * @param null $app_id App id.
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
     public function add($app_id)
@@ -60,7 +61,7 @@ class SmssController extends AppController
             }
             $this->Flash->error(__('The sms could not be saved. Please, try again.'));
         }
-        
+
         $this->set(compact('sms', 'app_id'));
     }
 

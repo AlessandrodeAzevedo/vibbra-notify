@@ -13,7 +13,14 @@ use Cake\Event\EventInterface;
  */
 class UsersController extends AppController
 {
-
+    /**
+     * Before filter method.
+     *
+     * Use this method to add common before code loading components.
+     *
+     * @param \Cake\Event\EventInterface $event Event
+     * @return void
+     */
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
@@ -45,7 +52,8 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful login, renders view otherwise.
      */
-    public function login(){
+    public function login()
+    {
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
         if ($result->isValid()) {
@@ -61,11 +69,13 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful login, renders view otherwise.
      */
-    public function logout(){
+    public function logout()
+    {
         $result = $this->Authentication->getResult();
         if ($result->isValid()) {
             $this->Authentication->logout();
         }
+
         return $this->redirect('/');
     }
 }

@@ -45,6 +45,7 @@ class EmailsController extends AppController
     /**
      * Add method
      *
+     * @param null $app_id App id.
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
     public function add($app_id)
@@ -55,12 +56,12 @@ class EmailsController extends AppController
             $email->app_id = $app_id;
             if ($this->Emails->save($email)) {
                 $this->Flash->success(__('The email has been saved.'));
-                
+
                 return $this->redirect(['action' => 'view', 'controller' => 'Apps', $app_id]);
             }
             $this->Flash->error(__('The email could not be saved. Please, try again.'));
         }
-        
+
         $this->set(compact('email', 'app_id'));
     }
 

@@ -3,11 +3,10 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
-use Cake\ORM\Query;
+use App\Model\Filter\NotificationsCollection;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-use App\Model\Filter\NotificationsCollection;
 
 /**
  * Notifications Model
@@ -15,7 +14,6 @@ use App\Model\Filter\NotificationsCollection;
  * @property \App\Model\Table\AppsTable&\Cake\ORM\Association\BelongsTo $Apps
  * @property \App\Model\Table\ForeignsTable&\Cake\ORM\Association\BelongsTo $Foreigns
  * @property \App\Model\Table\ReadsTable&\Cake\ORM\Association\BelongsTo $Reads
- *
  * @method \App\Model\Entity\Notification newEmptyEntity()
  * @method \App\Model\Entity\Notification newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Notification[] newEntities(array $data, array $options = [])
@@ -29,7 +27,6 @@ use App\Model\Filter\NotificationsCollection;
  * @method \App\Model\Entity\Notification[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
  * @method \App\Model\Entity\Notification[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
  * @method \App\Model\Entity\Notification[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
- *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class NotificationsTable extends Table
@@ -50,11 +47,11 @@ class NotificationsTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->addBehavior('Search.Search',[
+        $this->addBehavior('Search.Search', [
             'collectionClass' => NotificationsCollection::class,
             'actions' => ['index'],
         ]);
-        
+
         $this->belongsTo('Apps', [
             'foreignKey' => 'app_id',
             'joinType' => 'INNER',
@@ -66,16 +63,16 @@ class NotificationsTable extends Table
         ->setConditions(['Notifications.model' => 'Emails']);
         $this->belongsTo('WebPushes', [
             'foreignKey' => 'foreign_id',
-            'joinType' => 'LEFT'
+            'joinType' => 'LEFT',
         ])
         ->setConditions(['Notifications.model' => 'WebPushes']);
         $this->belongsTo('Smss', [
             'foreignKey' => 'foreign_id',
-            'joinType' => 'LEFT'
+            'joinType' => 'LEFT',
         ])
         ->setConditions(['Notifications.model' => 'Smss']);
         $this->hasMany('NotificationOptions', [
-            'foreignKey' => 'notification_id'
+            'foreignKey' => 'notification_id',
         ]);
     }
 

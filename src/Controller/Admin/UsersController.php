@@ -23,10 +23,10 @@ class UsersController extends AppController
         $users = $this->paginate($this->Users);
         $roles = [
             1 => 'Admin',
-            2 => 'Client'
+            2 => 'Client',
         ];
-        
-        $this->set(compact('users','roles'));
+
+        $this->set(compact('users', 'roles'));
     }
 
     /**
@@ -52,9 +52,8 @@ class UsersController extends AppController
         }
         $roles = [
             1 => 'Admin',
-            2 => 'Client'
+            2 => 'Client',
         ];
         $this->set(compact('user', 'roles'));
     }
-
 }

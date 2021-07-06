@@ -21,17 +21,17 @@ class NotificationsController extends AppController
         $notifications = $this->Notifications
         ->find('search', [
             'search' => $this->request->getQueryParams(),
-            'contain' => ['Apps','Emails','WebPushes','Smss','NotificationOptions']
+            'contain' => ['Apps','Emails','WebPushes','Smss','NotificationOptions'],
         ]);
-        
+
         $notifications = $this->paginate($notifications);
 
         $origins = [
             1 => __('Triggered by API'),
-            2 => __('Triggered by Platform')
+            2 => __('Triggered by Platform'),
         ];
 
-        $this->set(compact('notifications','origins'));
+        $this->set(compact('notifications', 'origins'));
     }
 
     /**

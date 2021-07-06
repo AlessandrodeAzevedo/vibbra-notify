@@ -19,7 +19,7 @@ class AppsController extends AppController
     {
         $apps = $this->Apps->find()
         ->where([
-            'user_id' => $this->auth_user['id']
+            'user_id' => $this->auth_user['id'],
         ]);
         $apps = $this->paginate($apps);
 
@@ -39,7 +39,7 @@ class AppsController extends AppController
             'contain' => [
                 'WebPushes',
                 'Emails',
-                'Smss'
+                'Smss',
             ],
         ]);
 
@@ -59,7 +59,7 @@ class AppsController extends AppController
             $app->user_id = $this->auth_user->id;
             if ($this->Apps->save($app)) {
                 $this->Flash->success(__('The app has been saved.'));
-                
+
                 return $this->redirect(['action' => 'edit', $app->id]);
             }
             $this->Flash->error(__('The app could not be saved. Please, try again.'));
@@ -80,7 +80,7 @@ class AppsController extends AppController
             'contain' => [
                 'WebPushes',
                 'Emails',
-                'Smss'
+                'Smss',
             ],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {

@@ -29,6 +29,7 @@ use Cake\Controller\Controller;
 class AppController extends Controller
 {
     public $auth_user;
+
     /**
      * Initialization hook method.
      *
@@ -45,7 +46,7 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Authentication.Authentication');
-        if($this->Authentication->getResult()->isValid()){
+        if ($this->Authentication->getResult()->isValid()) {
             $this->auth_user = $this->Authentication->getResult()->getData();
         }
         /*
@@ -55,10 +56,18 @@ class AppController extends Controller
         //$this->loadComponent('FormProtection');
     }
 
+    /**
+     * Before filter method.
+     *
+     * Use this method to add common before code loading components.
+     *
+     * @param \Cake\Event\EventInterface $event Event
+     * @return void
+     */
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        
+
         $this->Authentication->addUnauthenticatedActions(['login']);
     }
 }

@@ -45,6 +45,7 @@ class WebPushesController extends AppController
     /**
      * Add method
      *
+     * @param null $app_id App id.
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
     public function add($app_id)
