@@ -4,8 +4,53 @@
  * @var \App\Model\Entity\Notification[]|\Cake\Collection\CollectionInterface $notifications
  */
 ?>
+<h3><?= __('Notifications') ?></h3>
+<section class="border p-2 text-center mb-4">
+    <?= $this->Form->create(null, [
+        'method' => 'GET',
+        'class' => "row row-cols-lg-auto g-3 align-items-center"
+    ]); ?>
+        <div class="col-auto">
+            <?= $this->Form->control('begin_date',[
+                "data-format" => "**/**/****",
+                "data-mask" => "DD/MM/YYYY"
+            ]); ?>
+        </div>
+        <div class="col-auto">
+            <?= $this->Form->control('end_date',[
+                "data-format" => "**/**/****",
+                "data-mask" => "DD/MM/YYYY"
+            ]); ?>
+        
+        </div>
+        <div class="col-auto text-left">
+            <?= $this->Form->control('origin',[
+                'templates' => [
+                    'inputContainer' => '{{content}}',
+                ],
+                'label' => false,
+                'options' => $origins,
+                'empty' => __('Select a origin')
+            ]); ?>
+        </div>
+        <div class="col-auto">
+            <?= $this->Form->submit('Filter',[
+                "class" => "btn btn-primary"
+            ]); ?>
+        </div>
+        <div class="col-auto">
+            <?= $this->Html->link('Export to PDF', '#', [
+                "class" => "btn btn-primary"
+            ]); ?>
+        </div>
+        <div class="col-auto">
+            <?= $this->Html->link('Export to Excel', '#', [
+                "class" => "btn btn-primary"
+            ]); ?>
+        </div>
+    <?= $this->Form->end(); ?>
+</section>
 <div class="notifications">
-    <h3><?= __('Notifications') ?></h3>
     <div>
         <table class="styled-table">
             <thead>
@@ -20,7 +65,7 @@
                 <?php foreach ($notifications as $notification): ?>
                     <tr class="notification" id="notification-<?= $notification->id ?>" style="cursor:pointer">
                         <td>-</td>
-                        <td><?= $notification->has('app') ? $this->Html->link($notification->app->name, ['controller' => 'Apps', 'action' => 'view', $notification->app->id]) : '' ?></td>
+                        <td><?= $notification->has('app') ? $notification->app->name : '' ?></td>
                         <td><?= h($notification->sent_at) ?></td>
                         <td><?= $origins[$notification->origin] ?></td>
                     </tr>
@@ -85,6 +130,13 @@
         font-weight: bold;
         color: var(--mdb-primary);
     }
+    .form-select:focus{
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-color: var(--mdb-primary);
+        -webkit-box-shadow: inset 0 0 0 1px var(--mdb-primary);
+        box-shadow: inset 0 0 0 1px var(--mdb-primary);
+    }
 </style>
 <script>
     var notifications = document.getElementsByClassName("notification");
@@ -104,4 +156,49 @@
     for (var i = 0; i < notifications.length; i++) {
         notifications[i].addEventListener('click', toogleNotification, false);
     }
+    function doFormat(x, pattern, mask) {
+  var strippedValue = x.replace(/[^0-9]/g, "");
+  var chars = strippedValue.split('');
+  var count = 0;
+
+  var formatted = '';
+  for (var i=0; i<pattern.length; i++) {
+    const c = pattern[i];
+    if (chars[count]) {
+      if (/\*/.test(c)) {
+        formatted += chars[count];
+        count++;
+      } else {
+        formatted += c;
+      }
+    } else if (mask) {
+      if (mask.split('')[i])
+        formatted += mask.split('')[i];
+    }
+  }
+  return formatted;
+}
+
+document.querySelectorAll('[data-mask]').forEach(function(e) {
+  function format(elem) {
+    const val = doFormat(elem.value, elem.getAttribute('data-format'));
+    elem.value = doFormat(elem.value, elem.getAttribute('data-format'), elem.getAttribute('data-mask'));
+    
+    if (elem.createTextRange) {
+      var range = elem.createTextRange();
+      range.move('character', val.length);
+      range.select();
+    } else if (elem.selectionStart) {
+      elem.focus();
+      elem.setSelectionRange(val.length, val.length);
+    }
+  }
+  e.addEventListener('keyup', function() {
+    format(e);
+  });
+  e.addEventListener('keydown', function() {
+    format(e);
+  });
+  format(e)
+});
 </script>

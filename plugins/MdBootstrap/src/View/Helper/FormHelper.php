@@ -84,7 +84,7 @@ class FormHelper extends \Cake\View\Helper\FormHelper
             // Option group element used in select pickers.
             'optgroup' => '<optgroup label="{{label}}"{{attrs}}>{{content}}</optgroup>',
             // Select element,
-            'select' => '<select name="{{name}}"{{attrs}}>{{content}}</select>',
+            'select' => '<select class="form-select" name="{{name}}"{{attrs}}>{{content}}</select>',
             // Multi-select element,
             'selectMultiple' => '<select name="{{name}}[]" multiple="multiple"{{attrs}}>{{content}}</select>',
             // Radio input element,

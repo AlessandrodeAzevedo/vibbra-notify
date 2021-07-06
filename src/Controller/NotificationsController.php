@@ -18,8 +18,11 @@ class NotificationsController extends AppController
      */
     public function index()
     {
-        $notifications = $this->Notifications->find()
-        ->contain(['Apps','Emails','WebPushes','Smss','NotificationOptions']);
+        $notifications = $this->Notifications
+        ->find('search', [
+            'search' => $this->request->getQueryParams(),
+            'contain' => ['Apps','Emails','WebPushes','Smss','NotificationOptions']
+        ]);
         
         $notifications = $this->paginate($notifications);
 

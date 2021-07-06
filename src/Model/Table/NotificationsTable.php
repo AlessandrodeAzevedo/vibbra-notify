@@ -7,6 +7,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use App\Model\Filter\NotificationsCollection;
 
 /**
  * Notifications Model
@@ -49,6 +50,11 @@ class NotificationsTable extends Table
 
         $this->addBehavior('Timestamp');
 
+        $this->addBehavior('Search.Search',[
+            'collectionClass' => NotificationsCollection::class,
+            'actions' => ['index'],
+        ]);
+        
         $this->belongsTo('Apps', [
             'foreignKey' => 'app_id',
             'joinType' => 'INNER',
