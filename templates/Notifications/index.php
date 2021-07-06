@@ -47,8 +47,9 @@
                 'Export to PDF', 
                 !empty(http_build_query($this->request->getQueryParams())) ? 
                 "/notifications.pdf?".http_build_query($this->request->getQueryParams()) : 
-                '.pdf', 
+                '/notifications.pdf',
                 [
+                    'target' => '_blank',
                     "class" => "btn btn-outline-primary",
                 ]
             ); ?>
