@@ -87,7 +87,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                     <li>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="/users/logout">Logout</a>
                     </li>
                 </ul>
             </div>

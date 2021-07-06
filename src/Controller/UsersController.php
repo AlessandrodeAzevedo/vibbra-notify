@@ -44,6 +44,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
+        $this->viewBuilder()->setLayout('login');
         $this->set(compact('user'));
     }
 
@@ -62,6 +63,7 @@ class UsersController extends AppController
         if ($this->request->is('post') && !$result->isValid()) {
             $this->Flash->error(__('Invalid username or password'));
         }
+        $this->viewBuilder()->setLayout('login');
     }
 
     /**
