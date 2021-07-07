@@ -80,4 +80,24 @@ class UsersController extends AppController
 
         return $this->redirect('/');
     }
+
+    /**
+     * Change language
+     *
+     * @param int $id Identify language
+     * @return \Cake\Http\Response|null|void Redirects on initial page.
+     */
+    public function changeLang($id)
+    {
+        $languages = [
+            1 => 'en_US',
+            2 => 'pt_BR',
+        ];
+        $session = $this->getRequest()->getSession();
+        $session->write([
+            'Config.language' => $languages[$id],
+        ]);
+
+        return $this->redirect('/');
+    }
 }

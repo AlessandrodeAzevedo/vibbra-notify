@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\I18n\I18n;
 
 /**
  * Application Controller
@@ -54,6 +55,14 @@ class AppController extends Controller
         if ($this->Authentication->getResult()->isValid()) {
             $this->auth_user = $this->Authentication->getResult()->getData();
         }
+        $session = $this->getRequest()->getSession();
+        if (!$session->check('Config.language')) {
+            $session->write([
+                'Config.language' => 'en_US',
+            ]);
+        }
+        I18n::setLocale($session->read('Config.language'));
+
         /*
          * Enable the following component for recommended CakePHP form protection settings.
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html

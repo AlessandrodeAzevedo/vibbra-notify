@@ -1,0 +1,886 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2021-07-07 04:36+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/Admin/AppsController.php:56
+#: Controller/AppsController.php:131
+msgid "The app has been deleted."
+msgstr ""
+
+#: Controller/Admin/AppsController.php:58
+#: Controller/AppsController.php:133
+msgid "The app could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:47
+#: Controller/UsersController.php:41
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:51
+#: Controller/UsersController.php:45
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AppsController.php:61
+#: Controller/AppsController.php:111
+msgid "The app has been saved."
+msgstr ""
+
+#: Controller/AppsController.php:65
+#: Controller/AppsController.php:114
+msgid "The app could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AppsController.php:94
+msgid "This extension is not permitted."
+msgstr ""
+
+#: Controller/EmailsController.php:60
+#: Controller/EmailsController.php:85
+msgid "The email has been saved."
+msgstr ""
+
+#: Controller/EmailsController.php:64
+#: Controller/EmailsController.php:89
+msgid "The email could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/EmailsController.php:107
+#: Controller/EmailsController.php:135
+msgid "The email has been deleted."
+msgstr ""
+
+#: Controller/EmailsController.php:109
+#: Controller/EmailsController.php:139
+msgid "The email could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/NotificationsController.php:32
+msgid "Triggered by API"
+msgstr ""
+
+#: Controller/NotificationsController.php:33
+msgid "Triggered by Platform"
+msgstr ""
+
+#: Controller/NotificationsController.php:77
+#: Controller/NotificationsController.php:102
+msgid "The notification has been saved."
+msgstr ""
+
+#: Controller/NotificationsController.php:81
+#: Controller/NotificationsController.php:106
+msgid "The notification could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/NotificationsController.php:124
+msgid "The notification has been deleted."
+msgstr ""
+
+#: Controller/NotificationsController.php:126
+msgid "The notification could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SmssController.php:60
+#: Controller/SmssController.php:85
+msgid "The sms has been saved."
+msgstr ""
+
+#: Controller/SmssController.php:64
+#: Controller/SmssController.php:89
+msgid "The sms could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SmssController.php:107
+msgid "The sms has been deleted."
+msgstr ""
+
+#: Controller/SmssController.php:109
+msgid "The sms could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:64
+msgid "Invalid username or password"
+msgstr ""
+
+#: Controller/WebPushesController.php:60
+#: Controller/WebPushesController.php:84
+msgid "The web push has been saved."
+msgstr ""
+
+#: Controller/WebPushesController.php:64
+#: Controller/WebPushesController.php:88
+msgid "The web push could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/WebPushesController.php:106
+msgid "The web push has been deleted."
+msgstr ""
+
+#: Controller/WebPushesController.php:108
+msgid "The web push could not be deleted. Please, try again."
+msgstr ""
+
+#: Admin/Apps/index.php:8
+#: Apps/index.php:7
+#: Apps/view.php:21
+msgid "New App"
+msgstr ""
+
+#: Admin/Apps/index.php:9
+msgid "Apps"
+msgstr ""
+
+#: Admin/Apps/index.php:18
+#: Admin/Apps/view.php:10
+#: Admin/Apps/view.php:69
+#: Admin/Apps/view.php:109
+#: Admin/Apps/view.php:153
+#: Admin/Users/edit.php:10
+#: Admin/Users/index.php:17
+#: Admin/WebPushes/add.php:10
+#: Admin/WebPushes/edit.php:10
+#: Admin/WebPushes/index.php:29
+#: Admin/WebPushes/view.php:10
+#: Apps/view.php:17
+#: Apps/view.php:82
+#: Apps/view.php:122
+#: Apps/view.php:166
+#: Emails/add.php:10
+#: Emails/edit.php:10
+#: Emails/index.php:25
+#: Emails/view.php:10
+#: Notifications/add.php:10
+#: Notifications/edit.php:10
+#: Notifications/view.php:10
+#: Smss/add.php:10
+#: Smss/edit.php:10
+#: Smss/index.php:22
+#: Smss/view.php:10
+#: WebPushes/add.php:10
+#: WebPushes/edit.php:10
+#: WebPushes/index.php:29
+#: WebPushes/view.php:10
+msgid "Actions"
+msgstr ""
+
+#: Admin/Apps/index.php:29
+#: Admin/Apps/view.php:85
+#: Admin/Apps/view.php:122
+#: Admin/Apps/view.php:173
+#: Admin/WebPushes/index.php:51
+#: Apps/index.php:15
+#: Apps/view.php:98
+#: Apps/view.php:135
+#: Apps/view.php:186
+#: Emails/index.php:43
+#: Smss/index.php:37
+#: WebPushes/index.php:51
+msgid "View"
+msgstr ""
+
+#: Admin/Apps/index.php:30
+#: Admin/Apps/view.php:87
+#: Admin/Apps/view.php:124
+#: Admin/Apps/view.php:175
+#: Admin/WebPushes/edit.php:12
+#: Admin/WebPushes/index.php:53
+#: Apps/index.php:17
+#: Apps/view.php:100
+#: Apps/view.php:137
+#: Apps/view.php:188
+#: Emails/edit.php:12
+#: Emails/index.php:45
+#: Notifications/edit.php:12
+#: Smss/edit.php:12
+#: Smss/index.php:39
+#: WebPushes/edit.php:12
+#: WebPushes/index.php:53
+msgid "Delete"
+msgstr ""
+
+#: Admin/Apps/index.php:30
+#: Admin/Apps/view.php:11
+#: Admin/Apps/view.php:87
+#: Admin/Apps/view.php:124
+#: Admin/Apps/view.php:175
+#: Admin/WebPushes/edit.php:14
+#: Admin/WebPushes/index.php:53
+#: Admin/WebPushes/view.php:12
+#: Apps/index.php:17
+#: Apps/view.php:19
+#: Apps/view.php:100
+#: Apps/view.php:137
+#: Apps/view.php:188
+#: Emails/edit.php:14
+#: Emails/index.php:45
+#: Emails/view.php:12
+#: Notifications/edit.php:14
+#: Notifications/view.php:12
+#: Smss/edit.php:14
+#: Smss/index.php:39
+#: Smss/view.php:12
+#: WebPushes/edit.php:14
+#: WebPushes/index.php:53
+#: WebPushes/view.php:12
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Admin/Apps/index.php:39
+#: Admin/Users/index.php:37
+#: Admin/WebPushes/index.php:62
+#: Emails/index.php:54
+#: Smss/index.php:48
+#: WebPushes/index.php:62
+msgid "first"
+msgstr ""
+
+#: Admin/Apps/index.php:40
+#: Admin/Users/index.php:38
+#: Admin/WebPushes/index.php:63
+#: Emails/index.php:55
+#: Smss/index.php:49
+#: WebPushes/index.php:63
+msgid "previous"
+msgstr ""
+
+#: Admin/Apps/index.php:42
+#: Admin/Users/index.php:40
+#: Admin/WebPushes/index.php:65
+#: Emails/index.php:57
+#: Smss/index.php:51
+#: WebPushes/index.php:65
+msgid "next"
+msgstr ""
+
+#: Admin/Apps/index.php:43
+#: Admin/Users/index.php:41
+#: Admin/WebPushes/index.php:66
+#: Emails/index.php:58
+#: Smss/index.php:52
+#: WebPushes/index.php:66
+msgid "last"
+msgstr ""
+
+#: Admin/Apps/index.php:45
+#: Admin/Users/index.php:43
+#: Admin/WebPushes/index.php:68
+#: Emails/index.php:60
+#: Smss/index.php:54
+#: WebPushes/index.php:68
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr ""
+
+#: Admin/Apps/view.php:11
+#: Apps/view.php:19
+msgid "Delete App"
+msgstr ""
+
+#: Admin/Apps/view.php:12
+#: Apps/view.php:20
+msgid "List Apps"
+msgstr ""
+
+#: Admin/Apps/view.php:20
+#: Apps/view.php:33
+msgid "Name"
+msgstr ""
+
+#: Admin/Apps/view.php:24
+msgid "User"
+msgstr ""
+
+#: Admin/Apps/view.php:28
+#: Apps/view.php:41
+msgid "Enable Webpush"
+msgstr ""
+
+#: Admin/Apps/view.php:29
+#: Admin/Apps/view.php:33
+#: Admin/Apps/view.php:37
+#: Admin/Apps/view.php:49
+#: Admin/WebPushes/view.php:79
+#: Apps/view.php:42
+#: Apps/view.php:46
+#: Apps/view.php:50
+#: Apps/view.php:62
+#: Emails/view.php:63
+#: Notifications/index.php:102
+#: Notifications/view.php:63
+#: Smss/view.php:51
+#: WebPushes/view.php:79
+msgid "Yes"
+msgstr ""
+
+#: Admin/Apps/view.php:29
+#: Admin/Apps/view.php:33
+#: Admin/Apps/view.php:37
+#: Admin/Apps/view.php:49
+#: Admin/WebPushes/view.php:79
+#: Apps/view.php:42
+#: Apps/view.php:46
+#: Apps/view.php:50
+#: Apps/view.php:62
+#: Emails/view.php:63
+#: Notifications/index.php:102
+#: Notifications/view.php:63
+#: Smss/view.php:51
+#: WebPushes/view.php:79
+msgid "No"
+msgstr ""
+
+#: Admin/Apps/view.php:32
+#: Apps/view.php:45
+msgid "Enable Email"
+msgstr ""
+
+#: Admin/Apps/view.php:36
+#: Apps/view.php:49
+msgid "Enable Sms"
+msgstr ""
+
+#: Admin/Apps/view.php:40
+#: Admin/Apps/view.php:66
+#: Admin/Apps/view.php:106
+#: Admin/Apps/view.php:150
+#: Admin/WebPushes/view.php:70
+#: Apps/view.php:53
+#: Apps/view.php:79
+#: Apps/view.php:119
+#: Apps/view.php:163
+#: Emails/view.php:54
+#: Notifications/view.php:54
+#: Smss/view.php:42
+#: WebPushes/view.php:70
+msgid "Created"
+msgstr ""
+
+#: Admin/Apps/view.php:44
+#: Admin/Apps/view.php:67
+#: Admin/Apps/view.php:107
+#: Admin/Apps/view.php:151
+#: Admin/WebPushes/view.php:74
+#: Apps/view.php:57
+#: Apps/view.php:80
+#: Apps/view.php:120
+#: Apps/view.php:164
+#: Emails/view.php:58
+#: Notifications/view.php:58
+#: Smss/view.php:46
+#: WebPushes/view.php:74
+msgid "Modified"
+msgstr ""
+
+#: Admin/Apps/view.php:48
+#: Admin/Apps/view.php:68
+#: Admin/Apps/view.php:108
+#: Admin/Apps/view.php:152
+#: Admin/WebPushes/view.php:78
+#: Apps/view.php:61
+#: Apps/view.php:81
+#: Apps/view.php:121
+#: Apps/view.php:165
+#: Emails/view.php:62
+#: Notifications/view.php:62
+#: Smss/view.php:50
+#: WebPushes/view.php:78
+msgid "Status"
+msgstr ""
+
+#: Admin/Apps/view.php:53
+#: Apps/view.php:66
+msgid "Related Emails"
+msgstr ""
+
+#: Admin/Apps/view.php:58
+#: Admin/Apps/view.php:101
+#: Admin/Apps/view.php:138
+#: Admin/WebPushes/view.php:66
+#: Apps/view.php:37
+#: Apps/view.php:71
+#: Apps/view.php:114
+#: Apps/view.php:151
+#: Emails/view.php:50
+#: Notifications/view.php:34
+#: Smss/view.php:38
+#: WebPushes/view.php:66
+msgid "Id"
+msgstr ""
+
+#: Admin/Apps/view.php:59
+#: Admin/Apps/view.php:102
+#: Admin/Apps/view.php:139
+#: Apps/view.php:72
+#: Apps/view.php:115
+#: Apps/view.php:152
+msgid "App Id"
+msgstr ""
+
+#: Admin/Apps/view.php:60
+#: Apps/view.php:73
+#: Emails/view.php:26
+msgid "Server Name"
+msgstr ""
+
+#: Admin/Apps/view.php:61
+#: Apps/view.php:74
+#: Emails/view.php:30
+msgid "Port"
+msgstr ""
+
+#: Admin/Apps/view.php:62
+#: Admin/Apps/view.php:104
+#: Apps/view.php:75
+#: Apps/view.php:117
+#: Emails/view.php:34
+#: Smss/view.php:30
+msgid "Login"
+msgstr ""
+
+#: Admin/Apps/view.php:63
+#: Admin/Apps/view.php:105
+#: Apps/view.php:76
+#: Apps/view.php:118
+#: Emails/view.php:38
+#: Smss/view.php:34
+msgid "Password"
+msgstr ""
+
+#: Admin/Apps/view.php:64
+#: Apps/view.php:77
+#: Emails/view.php:42
+msgid "Sender Name"
+msgstr ""
+
+#: Admin/Apps/view.php:65
+#: Apps/view.php:78
+#: Emails/view.php:46
+msgid "Sender Email"
+msgstr ""
+
+#: Admin/Apps/view.php:86
+#: Admin/Apps/view.php:123
+#: Admin/Apps/view.php:174
+#: Admin/Users/index.php:28
+#: Admin/WebPushes/index.php:52
+#: Apps/index.php:16
+#: Apps/view.php:99
+#: Apps/view.php:136
+#: Apps/view.php:187
+#: Emails/index.php:44
+#: Smss/index.php:38
+#: WebPushes/index.php:52
+msgid "Edit"
+msgstr ""
+
+#: Admin/Apps/view.php:96
+#: Apps/view.php:109
+msgid "Related Smss"
+msgstr ""
+
+#: Admin/Apps/view.php:103
+#: Apps/view.php:116
+#: Smss/view.php:26
+msgid "Provider"
+msgstr ""
+
+#: Admin/Apps/view.php:133
+#: Apps/view.php:146
+msgid "Related Web Pushes"
+msgstr ""
+
+#: Admin/Apps/view.php:140
+#: Admin/WebPushes/view.php:26
+#: Apps/view.php:153
+#: WebPushes/view.php:26
+msgid "Site Name"
+msgstr ""
+
+#: Admin/Apps/view.php:141
+#: Admin/WebPushes/view.php:30
+#: Apps/view.php:154
+#: WebPushes/view.php:30
+msgid "Site Address"
+msgstr ""
+
+#: Admin/Apps/view.php:142
+#: Admin/WebPushes/view.php:34
+#: Apps/view.php:155
+#: WebPushes/view.php:34
+msgid "Site Icon"
+msgstr ""
+
+#: Admin/Apps/view.php:143
+#: Admin/WebPushes/view.php:38
+#: Apps/view.php:156
+#: WebPushes/view.php:38
+msgid "Text Message"
+msgstr ""
+
+#: Admin/Apps/view.php:144
+#: Admin/WebPushes/view.php:42
+#: Apps/view.php:157
+#: WebPushes/view.php:42
+msgid "Text Button Allow"
+msgstr ""
+
+#: Admin/Apps/view.php:145
+#: Admin/WebPushes/view.php:46
+#: Apps/view.php:158
+#: WebPushes/view.php:46
+msgid "Text Button Deny"
+msgstr ""
+
+#: Admin/Apps/view.php:146
+#: Admin/WebPushes/view.php:50
+#: Apps/view.php:159
+#: WebPushes/view.php:50
+msgid "Notify Title"
+msgstr ""
+
+#: Admin/Apps/view.php:147
+#: Admin/WebPushes/view.php:54
+#: Apps/view.php:160
+#: WebPushes/view.php:54
+msgid "Notify Message"
+msgstr ""
+
+#: Admin/Apps/view.php:148
+#: Admin/WebPushes/view.php:58
+#: Apps/view.php:161
+#: WebPushes/view.php:58
+msgid "Notify Link Enable"
+msgstr ""
+
+#: Admin/Apps/view.php:149
+#: Admin/WebPushes/view.php:62
+#: Apps/view.php:162
+#: WebPushes/view.php:62
+msgid "Notify Link"
+msgstr ""
+
+#: Admin/Users/edit.php:11
+msgid "List Users"
+msgstr ""
+
+#: Admin/Users/edit.php:18
+msgid "Edit User"
+msgstr ""
+
+#: Admin/Users/edit.php:25
+#: Admin/WebPushes/add.php:34
+#: Admin/WebPushes/edit.php:39
+#: Apps/add.php:46
+#: Apps/edit.php:122
+#: Emails/add.php:30
+#: Emails/edit.php:35
+#: Notifications/add.php:30
+#: Notifications/edit.php:35
+#: Smss/add.php:27
+#: Smss/edit.php:32
+#: WebPushes/add.php:32
+#: WebPushes/edit.php:39
+msgid "Submit"
+msgstr ""
+
+#: Admin/Users/index.php:8
+msgid "Users"
+msgstr ""
+
+#: Admin/Users/index.php:26
+msgid "Active"
+msgstr ""
+
+#: Admin/Users/index.php:26
+msgid "Disable"
+msgstr ""
+
+#: Admin/WebPushes/add.php:11
+#: Admin/WebPushes/edit.php:16
+#: Admin/WebPushes/view.php:13
+#: WebPushes/edit.php:16
+#: WebPushes/view.php:13
+msgid "List Web Pushes"
+msgstr ""
+
+#: Admin/WebPushes/add.php:18
+#: WebPushes/add.php:18
+msgid "Add Web Push"
+msgstr ""
+
+#: Admin/WebPushes/edit.php:23
+#: Admin/WebPushes/view.php:11
+#: WebPushes/edit.php:23
+#: WebPushes/view.php:11
+msgid "Edit Web Push"
+msgstr ""
+
+#: Admin/WebPushes/index.php:8
+#: Admin/WebPushes/view.php:14
+#: WebPushes/index.php:8
+#: WebPushes/view.php:14
+msgid "New Web Push"
+msgstr ""
+
+#: Admin/WebPushes/index.php:9
+#: WebPushes/index.php:9
+msgid "Web Pushes"
+msgstr ""
+
+#: Admin/WebPushes/view.php:12
+#: WebPushes/view.php:12
+msgid "Delete Web Push"
+msgstr ""
+
+#: Admin/WebPushes/view.php:22
+#: Emails/view.php:22
+#: Notifications/view.php:22
+#: Smss/view.php:22
+#: WebPushes/view.php:22
+msgid "App"
+msgstr ""
+
+#: Apps/add.php:10
+msgid "Add new app"
+msgstr ""
+
+#: Apps/add.php:47
+#: Apps/edit.php:123
+msgid "Return to apps"
+msgstr ""
+
+#: Apps/edit.php:10
+msgid "Edit app"
+msgstr ""
+
+#: Apps/edit.php:25
+msgid "Configure channels"
+msgstr ""
+
+#: Apps/edit.php:29
+#: Notifications/index.php:90
+msgid "Web push"
+msgstr ""
+
+#: Apps/edit.php:34
+#: Notifications/index.php:92
+msgid "E-mail"
+msgstr ""
+
+#: Apps/edit.php:39
+#: Notifications/index.php:94
+msgid "SMS"
+msgstr ""
+
+#: Apps/edit.php:75
+msgid "New files"
+msgstr ""
+
+#: Apps/edit.php:90
+msgid "Remove file"
+msgstr ""
+
+#: Apps/index.php:19
+msgid "Last Notify: {0} days ago"
+msgstr ""
+
+#: Apps/view.php:18
+msgid "Edit App"
+msgstr ""
+
+#: Apps/view.php:23
+msgid "Config Web Push"
+msgstr ""
+
+#: Apps/view.php:24
+msgid "Config Email"
+msgstr ""
+
+#: Apps/view.php:25
+msgid "Config Sms"
+msgstr ""
+
+#: Emails/add.php:11
+#: Smss/add.php:11
+#: WebPushes/add.php:11
+msgid "Return to app"
+msgstr ""
+
+#: Emails/add.php:18
+msgid "Add Email"
+msgstr ""
+
+#: Emails/edit.php:16
+#: Emails/view.php:13
+msgid "List Emails"
+msgstr ""
+
+#: Emails/edit.php:23
+#: Emails/view.php:11
+msgid "Edit Email"
+msgstr ""
+
+#: Emails/index.php:8
+#: Emails/view.php:14
+msgid "New Email"
+msgstr ""
+
+#: Emails/index.php:9
+msgid "Emails"
+msgstr ""
+
+#: Emails/view.php:12
+msgid "Delete Email"
+msgstr ""
+
+#: Notifications/add.php:11
+#: Notifications/edit.php:16
+#: Notifications/view.php:13
+msgid "List Notifications"
+msgstr ""
+
+#: Notifications/add.php:18
+msgid "Add Notification"
+msgstr ""
+
+#: Notifications/edit.php:23
+#: Notifications/view.php:11
+msgid "Edit Notification"
+msgstr ""
+
+#: Notifications/index.php:8
+#: Notifications/pdf/index.php:8
+#: layout/default.php:53
+msgid "Notifications"
+msgstr ""
+
+#: Notifications/index.php:36
+msgid "Select a origin"
+msgstr ""
+
+#: Notifications/index.php:41
+msgid "Filter"
+msgstr ""
+
+#: Notifications/index.php:47
+msgid "Export to PDF"
+msgstr ""
+
+#: Notifications/index.php:58
+msgid "Export to Excel"
+msgstr ""
+
+#: Notifications/index.php:90
+#: Notifications/index.php:92
+#: Notifications/index.php:94
+msgid "Sent by"
+msgstr ""
+
+#: Notifications/index.php:99
+msgid "Sent in"
+msgstr ""
+
+#: Notifications/index.php:102
+msgid "Read"
+msgstr ""
+
+#: Notifications/view.php:12
+msgid "Delete Notification"
+msgstr ""
+
+#: Notifications/view.php:14
+msgid "New Notification"
+msgstr ""
+
+#: Notifications/view.php:26
+msgid "Model"
+msgstr ""
+
+#: Notifications/view.php:30
+msgid "Content"
+msgstr ""
+
+#: Notifications/view.php:38
+msgid "Foreign Id"
+msgstr ""
+
+#: Notifications/view.php:42
+msgid "Origin"
+msgstr ""
+
+#: Notifications/view.php:46
+msgid "Sent At"
+msgstr ""
+
+#: Notifications/view.php:50
+msgid "Read Id"
+msgstr ""
+
+#: Smss/add.php:18
+msgid "Add Sms"
+msgstr ""
+
+#: Smss/edit.php:16
+#: Smss/view.php:13
+msgid "List Smss"
+msgstr ""
+
+#: Smss/edit.php:23
+#: Smss/view.php:11
+msgid "Edit Sms"
+msgstr ""
+
+#: Smss/index.php:8
+#: Smss/view.php:14
+msgid "New Sms"
+msgstr ""
+
+#: Smss/index.php:9
+msgid "Smss"
+msgstr ""
+
+#: Smss/view.php:12
+msgid "Delete Sms"
+msgstr ""
+
+#: Users/add.php:27
+msgid "Set a role"
+msgstr ""
+
+#: Users/add.php:29
+msgid "Save"
+msgstr ""
+
+#: Users/add.php:32
+msgid "I already have a login"
+msgstr ""
+
+#: Users/login.php:18
+msgid "Add User"
+msgstr ""
+
+#: layout/default.php:50
+msgid "Home"
+msgstr ""
+
+#: layout/default.php:56
+msgid "Admin"
+msgstr ""
+
+#: layout/error.php:38
+msgid "Back"
+msgstr ""
+

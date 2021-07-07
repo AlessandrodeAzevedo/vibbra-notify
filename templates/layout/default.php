@@ -58,6 +58,22 @@ $siteDescription = 'Vibbra notify';
                 </ul>
             </div>
             <div class="d-flex align-items-center">
+                <div class="px-2">
+                    <?= $this->Html->link(
+                        $this->Html->image('flags/pt_BR.png', ['height' => '30px'])
+                        ,'/users/change-lang/2',
+                        [
+                            'escape' => false
+                        ]
+                    ); ?>
+                    <?= $this->Html->link(
+                        $this->Html->image('flags/en_US.png', ['height' => '30px'])
+                        ,'/users/change-lang/1',
+                        [
+                            'escape' => false
+                        ]
+                    ); ?>
+                </div>
                 <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                     <img src="https://i.pravatar.cc/40" class="rounded-circle" height="40" alt="" loading="lazy" />
                 </a>
