@@ -54,8 +54,8 @@ class EmailsFixture extends TestFixture
                 'password' => 'Lorem ipsum dolor sit amet',
                 'sender_name' => 'Lorem ipsum dolor sit amet',
                 'sender_email' => 'Lorem ipsum dolor sit amet',
-                'created' => '2021-07-04 02:17:10',
-                'modified' => '2021-07-04 02:17:10',
+                'created' => '2021-07-07 00:25:51',
+                'modified' => '2021-07-07 00:25:51',
                 'status' => 1,
             ],
         ];

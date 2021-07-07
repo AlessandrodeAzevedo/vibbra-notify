@@ -79,14 +79,36 @@ class AppsController extends AppController
         $app = $this->Apps->get($id, [
             'contain' => [
                 'WebPushes',
-                'Emails',
+                'Emails.EmailFiles',
                 'Smss',
             ],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $app = $this->Apps->patchEntity($app, $this->request->getData());
-            if ($this->Apps->save($app)) {
+            $request = $this->request->getData();
+            $isValid = true;
+            if (isset($request['newfile']) && !empty(isset($request['newfile']['name']))) {
+                $new_html_file['name'] = $request['newfile']['name'];
+                $fileobject = $this->request->getData('newfile.file');
+                $extensao = pathinfo($fileobject->getClientFilename(), PATHINFO_EXTENSION);
+                if (strtolower($extensao) !== 'html') {
+                    $this->Flash->error(__('This extension is not permitted.'));
+                    $isValid = false;
+                }
+                $new_html_file['file'] = md5(uniqid()) . ".$extensao";
+                $fileobject->moveTo(WWW_ROOT . DS . 'uploads' . DS . $new_html_file['file']);
+                $request['emails'][0]['email_files'][] = $new_html_file;
+                unset($request['newfile']);
+            }
+            $app = $this->Apps->patchEntity($app, $request, [
+                'associated' => [
+                    'WebPushes',
+                    'Emails.EmailFiles',
+                    'Smss',
+                ],
+            ]);
+            if ($isValid && $this->Apps->save($app)) {
                 $this->Flash->success(__('The app has been saved.'));
+                $this->redirect("/apps/edit/{$app->id}");
             }
             $this->Flash->error(__('The app could not be saved. Please, try again.'));
         }

@@ -20,3 +20,6 @@ parameters:
 		-
 			message: "#Access to an undefined property App\\\\Controller\\\\AppController\\:\\:\\$Authentication.#"
 			path: src/Controller/AppController.php
+		-
+			message: "#Access to an undefined property App\\\\Model\\\\Table\\\\EmailsTable\\:\\:\\$EmailFiles.#"
+			path: src/Controller/EmailsController.php

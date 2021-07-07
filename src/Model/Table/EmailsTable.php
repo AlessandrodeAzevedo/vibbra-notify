@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
-use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
@@ -47,6 +46,9 @@ class EmailsTable extends Table
         $this->belongsTo('Apps', [
             'foreignKey' => 'app_id',
             'joinType' => 'INNER',
+        ]);
+        $this->hasMany('EmailFiles', [
+            'foreignKey' => 'email_id',
         ]);
     }
 
@@ -103,20 +105,5 @@ class EmailsTable extends Table
             ->notEmptyString('status');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules): RulesChecker
-    {
-        $rules->add($rules->isUnique(['login']), ['errorField' => 'login']);
-        $rules->add($rules->existsIn(['app_id'], 'Apps'), ['errorField' => 'app_id']);
-
-        return $rules;
     }
 }

@@ -111,4 +111,34 @@ class EmailsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+     * Remove file method
+     *
+     * @param string|null $id Email file id.
+     * @return \Cake\Http\Response|null|void Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function removeFile($id)
+    {
+        $this->request->allowMethod(['get', 'post', 'delete']);
+        $emailFiles = $this->Emails->EmailFiles->find()
+        ->where([
+            'EmailFiles.id' => $id,
+            'Apps.user_id' => $this->auth_user['id'],
+        ])
+        ->contain('Emails.Apps')
+        ->leftJoinWith('Emails.Apps')
+        ->first();
+        if ($emailFiles && $this->Emails->EmailFiles->delete($emailFiles)) {
+            unlink(WWW_ROOT . DS . 'uploads' . DS . $emailFiles->file);
+            $this->Flash->success(__('The email has been deleted.'));
+
+            return $this->redirect("/apps/edit/{$emailFiles->email->app_id}");
+        } else {
+            $this->Flash->error(__('The email could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect('/apps');
+    }
 }

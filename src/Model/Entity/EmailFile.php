@@ -6,23 +6,18 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Email Entity
+ * EmailFile Entity
  *
  * @property int $id
- * @property int $app_id
- * @property string $server_name
- * @property string $port
- * @property string $login
- * @property string $password
- * @property string $sender_name
- * @property string $sender_email
+ * @property int $email_id
+ * @property string $name
+ * @property string $file
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime|null $modified
- * @property bool $status
  *
- * @property \App\Model\Entity\App $app
+ * @property \App\Model\Entity\Email $email
  */
-class Email extends Entity
+class EmailFile extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -34,17 +29,11 @@ class Email extends Entity
      * @var array
      */
     protected $_accessible = [
-        'app_id' => true,
-        'server_name' => true,
-        'port' => true,
-        'login' => true,
-        'password' => true,
-        'sender_name' => true,
-        'sender_email' => true,
+        'email_id' => true,
+        'name' => true,
+        'file' => true,
         'created' => true,
         'modified' => true,
-        'status' => true,
-        'app' => true,
-        'email_files' => true,
+        'email' => true,
     ];
 }

@@ -11,7 +11,9 @@
     </div>
 </div>
 
-<?= $this->Form->create($app) ?>
+<?= $this->Form->create($app,[
+    'enctype'=>'multipart/form-data'
+]) ?>
 <div class="row">
     <div class="col-md-8 py-2">
         <?= $this->Form->control('name'); ?>
@@ -24,12 +26,12 @@
         <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
             <?php if($app->enable_webpush): ?>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="webpush-tab" data-mdb-toggle="tab" href="#webpush-content" role="tab" aria-controls="webpush-content" aria-selected="true"><?= __("Web push") ?></a>
+                    <a class="nav-link" id="webpush-tab" data-mdb-toggle="tab" href="#webpush-content" role="tab" aria-controls="webpush-content" aria-selected="true"><?= __("Web push") ?></a>
                 </li>
             <?php endif; ?>
             <?php if($app->enable_email): ?>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="email-tab" data-mdb-toggle="tab" href="#email-content" role="tab" aria-controls="email-content" aria-selected="false"><?= __("E-mail") ?></a>
+                <a class="nav-link active" id="email-tab" data-mdb-toggle="tab" href="#email-content" role="tab" aria-controls="email-content" aria-selected="false"><?= __("E-mail") ?></a>
             </li>
             <?php endif; ?>
             <?php if($app->enable_sms): ?>
@@ -40,8 +42,9 @@
         </ul>
         <div class="tab-content border p-2" id="ex2-content">
             <?php if($app->enable_webpush): ?> 
-                <div class="tab-pane fade show active" id="webpush-content" role="tabpanel" aria-labelledby="webpush-tab">
+                <div class="tab-pane fade" id="webpush-content" role="tabpanel" aria-labelledby="webpush-tab">
                     <?php
+                        echo $this->Form->hidden('web_pushes.0.id');
                         echo $this->Form->control('web_pushes.0.site_name');
                         echo $this->Form->control('web_pushes.0.site_address');
                         echo $this->Form->control('web_pushes.0.site_icon');
@@ -56,8 +59,9 @@
                 </div>
             <?php endif; ?>
             <?php if($app->enable_email): ?> 
-                <div class="tab-pane fade" id="email-content" role="tabpanel" aria-labelledby="email-tab">
+                <div class="tab-pane fade show active" id="email-content" role="tabpanel" aria-labelledby="email-tab">
                     <?php
+                        echo $this->Form->hidden('emails.0.id');
                         echo $this->Form->control('emails.0.server_name');
                         echo $this->Form->control('emails.0.port');
                         echo $this->Form->control('emails.0.login');
@@ -67,11 +71,38 @@
                         echo $this->Form->control('emails.0.sender_name');
                         echo $this->Form->control('emails.0.sender_email');
                         ?>
+                    <hr>
+                    <h5><?= __('New files') ?></h5>
+                    <?= $this->Form->control('newfile.name',[
+                        'required' => false
+                    ]); ?>
+                    <?= $this->Form->file('newfile.file', [
+                        'class'=>'form-control'
+                    ]); ?>
+                    <hr>
+                    <div class="row">
+                        <?php if (!empty($app->emails)): ?>
+                            <?php foreach ($app->emails[0]->email_files as $email_file): ?>
+                                <div class="col-md-3">
+                                    <div class="text-center border py-3 p-2">
+                                        <i class="fas fa-file-invoice fa-5x"></i>
+                                        <div><?= $email_file->name ?></div>
+                                        <?= $this->Html->link(__('Remove file'), 
+                                        "/emails/remove-file/{$email_file->id}",
+                                        [
+                                            'class' => 'btn btn-sm btn-danger'
+                                        ]); ?>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             <?php endif; ?>
             <?php if($app->enable_sms): ?> 
                 <div class="tab-pane fade" id="sms-content" role="tabpanel" aria-labelledby="sms-tab">
                     <?php
+                        echo $this->Form->hidden('smss.0.id');
                         echo $this->Form->control('smss.0.provider');
                         echo $this->Form->control('smss.0.login');
                         echo $this->Form->control('smss.0.password',[
