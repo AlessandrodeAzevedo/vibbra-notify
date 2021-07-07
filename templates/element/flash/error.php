@@ -8,4 +8,15 @@ if (!isset($params['escape']) || $params['escape'] !== false) {
     $message = h($message);
 }
 ?>
-<div class="message error" onclick="this.classList.add('hidden');"><?= $message ?></div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {    
+    var message = "<?= $message ?>";
+    var timeOut =((message.length / 10) * 1000) > 5000 ? (message.length / 10) * 1000 : 5000;
+    notyf.error({
+        message: message,
+        duration: timeOut,
+        icon: false
+    });
+});
+</script>
+
