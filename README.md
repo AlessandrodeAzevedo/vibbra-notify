@@ -30,7 +30,20 @@ Após a instalação do composer na raiz do projeto precisamos rodar os migratio
 $ bin/cake migrations migrate
 ```
 
-Para funcionar o php é necessário a instalação do [WkHtmlToPdf](https://wkhtmltopdf.org/downloads.html), a instalação é bem simples e sua utilização é bem comum
+Também criei algumas entradas no banco para facilitar pois não consegui fazer oambiente para criar as notificações
+
+```
+$ bin/cake migrations seed
+```
+
+O seed também cria um usuário padrão para o sistema, para logar é só usar as seguintes credenciais
+
+```
+Email: admin@admin.com
+Senha: admin
+```
+
+Para funcionar o PDF é necessário a instalação do [WkHtmlToPdf](https://wkhtmltopdf.org/downloads.html), a instalação é bem simples e sua utilização é bem comum
 
 Se tudo der certo o sistema estará pronto para uso nesse ponto
 
