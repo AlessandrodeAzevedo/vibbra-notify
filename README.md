@@ -16,9 +16,10 @@ Para funcionar é necessário a instalação de algumas bibliotecas do php:
 
 *Utilizado para rodar os testes unitários*
 
-sudo apt install php-sqlite3 -y
+- sqlite3
 
-Também será necessário rodar o composer na raiz do projeto
+Também será necessário rodar o composer na raiz do projeto e colocar as informações do banco de dados no arquivo `config/app_local.php`
+
 ```
 $ composer install --ignore-platform-reqs
 ```
@@ -35,9 +36,9 @@ Se tudo der certo o sistema estará pronto para uso nesse ponto
 
 **Caso utilize o nginx acrescentei na raiz do projeto um arquivo de configuração default, nele é só alterar o root e o server se necessário**
 
-###Observações
+### Observações
 
-####Instalação via Vagrant
+#### Instalação via Vagrant
 
 Existe um Vagrantfile que gera todo o sistema operacional e as instalações de banco, php e biblioteca para o pdf, restando apenas rodar o comando do composer e os migrations
 
@@ -49,7 +50,7 @@ Você pode acessar o servidor gerado pelo vagrant através do comando
 $ vagrant ssh
 ```
 
-####Arquivo Bootstrap
+#### Arquivo Bootstrap
 
 Existe também na raiz do projeto um arquivo bootstrap.sh que é utilizado na instalação do Vagrantfile porém é um arquivo .sh comum e pode ser utilizado como referência ou executado em qualquer maquina linux (inclusive no docker)
 
