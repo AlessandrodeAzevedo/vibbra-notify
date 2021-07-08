@@ -2,12 +2,14 @@
 ##########################
 /config/app_local.php
 /config/.env
+/config/Migrations/schema-dump-default.lock
 /logs/*
 /tmp/*
 /vendor/*
 
 # OS generated files #
 ######################
+/.vagrant
 .DS_Store
 .DS_Store?
 ._*
