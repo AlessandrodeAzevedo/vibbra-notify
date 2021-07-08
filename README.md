@@ -8,10 +8,14 @@ Para a instalação é necessário o php 7.2 ou superior estável, para realizar
 Para o banco utilizei o Mysql(MariaDB 10.3) que é largamente utilizado neste tipo de projeto também.
 
 Para funcionar é necessário a instalação de algumas bibliotecas do php:
+
 *Utilizado pelo Cakephp*
+
 - intl
 - mbstring
+
 *Utilizado para rodar os testes unitários*
+
 sudo apt install php-sqlite3 -y
 
 Também será necessário rodar o composer na raiz do projeto
