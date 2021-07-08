@@ -52,9 +52,6 @@ $siteDescription = 'Vibbra notify';
                     <li class="nav-item">
                         <a class="nav-link" href="/notifications"><?= __('Notifications') ?></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><?= __('Admin') ?></a>
-                    </li>
                 </ul>
             </div>
             <div class="d-flex align-items-center">

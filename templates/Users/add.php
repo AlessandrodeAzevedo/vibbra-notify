@@ -18,14 +18,7 @@
                 <?= $this->Form->control('password', [
                     'required' => true,
                 ]); ?>
-                <?= $this->Form->control('role',[
-                    'options' => [
-                        1 => 'admin',
-                        2 => 'client'
-                    ],
-                    'label' => false,
-                    'empty' => __('Set a role')
-                ]); ?>
+                <?= $this->Form->hidden('role',['value' => 2]); ?>
                 <?= $this->Form->button(__('Save'), [
                     'class' => 'btn btn-primary'
                 ]); ?>

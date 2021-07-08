@@ -26,12 +26,12 @@
         <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
             <?php if($app->enable_webpush): ?>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="webpush-tab" data-mdb-toggle="tab" href="#webpush-content" role="tab" aria-controls="webpush-content" aria-selected="true"><?= __("Web push") ?></a>
+                    <a class="nav-link active" id="webpush-tab" data-mdb-toggle="tab" href="#webpush-content" role="tab" aria-controls="webpush-content" aria-selected="true"><?= __("Web push") ?></a>
                 </li>
             <?php endif; ?>
             <?php if($app->enable_email): ?>
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="email-tab" data-mdb-toggle="tab" href="#email-content" role="tab" aria-controls="email-content" aria-selected="false"><?= __("E-mail") ?></a>
+                <a class="nav-link" id="email-tab" data-mdb-toggle="tab" href="#email-content" role="tab" aria-controls="email-content" aria-selected="false"><?= __("E-mail") ?></a>
             </li>
             <?php endif; ?>
             <?php if($app->enable_sms): ?>
@@ -42,7 +42,7 @@
         </ul>
         <div class="tab-content border p-2" id="ex2-content">
             <?php if($app->enable_webpush): ?> 
-                <div class="tab-pane fade" id="webpush-content" role="tabpanel" aria-labelledby="webpush-tab">
+                <div class="tab-pane fade show active" id="webpush-content" role="tabpanel" aria-labelledby="webpush-tab">
                     <?php
                         echo $this->Form->hidden('web_pushes.0.id');
                         echo $this->Form->control('web_pushes.0.site_name');
@@ -59,7 +59,7 @@
                 </div>
             <?php endif; ?>
             <?php if($app->enable_email): ?> 
-                <div class="tab-pane fade show active" id="email-content" role="tabpanel" aria-labelledby="email-tab">
+                <div class="tab-pane fade" id="email-content" role="tabpanel" aria-labelledby="email-tab">
                     <?php
                         echo $this->Form->hidden('emails.0.id');
                         echo $this->Form->control('emails.0.server_name');
