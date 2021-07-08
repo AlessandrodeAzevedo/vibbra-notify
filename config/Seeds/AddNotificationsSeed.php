@@ -69,7 +69,7 @@ class AddNotificationsSeed extends AbstractSeed
             $data['sent_at'] = date('Y-m-d H:i:s');
             $data['foreign_id'] = 1;
             $data['model'] = 'Emails';
-            $data['origin'] = 1;
+            $data['origin'] = 2;
             $data['read_at'] = date('Y-m-d H:i:s');
             $data['content'] = 'Conteudo da mensagem';
         $table->insert($data)->save();
@@ -80,13 +80,13 @@ class AddNotificationsSeed extends AbstractSeed
             $data['foreign_id'] = 1;
             $data['model'] = 'WebPushes';
             $data['origin'] = 1;
-            $data['read_at'] = date('Y-m-d H:i:s');
+            $data['read_at'] = date('Y-06-01 H:i:s');
             $data['content'] = 'Conteudo da mensagem';
         $table->insert($data)->save();
         $table = $this->table('notifications');
             unset($data);
             $data['app_id'] = 1;
-            $data['sent_at'] = date('Y-m-d H:i:s');
+            $data['sent_at'] = date('Y-05-01 H:i:s');
             $data['foreign_id'] = 1;
             $data['model'] = 'Smss';
             $data['origin'] = 1;
